@@ -33,7 +33,7 @@ namespace Refactoring
                 {
                     User user = usrs[i];
                     // Check that name matches
-                    if (user.Name == name)
+                    if (user.UserName == name)
                     {
                         valUsr = true;
                     }
@@ -53,7 +53,7 @@ namespace Refactoring
                         User user = usrs[i];
 
                         // Check that name and password match
-                        if (user.Name == name && user.Pwd == pwd)
+                        if (user.UserName == name && user.Password == pwd)
                         {
                             valPwd = true;
                         }
@@ -78,13 +78,13 @@ namespace Refactoring
                             User usr = usrs[i];
 
                             // Check that name and password match
-                            if (usr.Name == name && usr.Pwd == pwd)
+                            if (usr.UserName == name && usr.Password == pwd)
                             {
-                                bal = usr.Bal;
+                                bal = usr.Balance;
 
                                 // Show balance 
                                 Console.WriteLine();
-                                Console.WriteLine("Your balance is " + usr.Bal.ToString("C"));
+                                Console.WriteLine("Your balance is " + usr.Balance.ToString("C"));
                             }
                         }
 
@@ -115,9 +115,9 @@ namespace Refactoring
                                 foreach (var usr in usrs)
                                 {
                                     // Check that name and password match
-                                    if (usr.Name == name && usr.Pwd == pwd)
+                                    if (usr.UserName == name && usr.Password == pwd)
                                     {
-                                        usr.Bal = bal;
+                                        usr.Balance = bal;
                                     }
                                 }
 
@@ -159,7 +159,7 @@ namespace Refactoring
                                 }
 
                                 // Check if quantity is less than quantity
-                                if (prods[num].Qty <= qty)
+                                if (prods[num].Quantity <= qty)
                                 {
                                     Console.Clear();
                                     Console.ForegroundColor = ConsoleColor.Red;
@@ -176,7 +176,7 @@ namespace Refactoring
                                     bal = bal - prods[num].Price * qty;
 
                                     // Quanity = Quantity - Quantity
-                                    prods[num].Qty = prods[num].Qty - qty;
+                                    prods[num].Quantity = prods[num].Quantity - qty;
 
                                     Console.Clear();
                                     Console.ForegroundColor = ConsoleColor.Green;
