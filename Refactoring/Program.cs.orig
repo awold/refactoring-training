@@ -15,8 +15,12 @@ namespace Refactoring
             List<User> users = JsonConvert.DeserializeObject<List<User>>(File.ReadAllText(@"Data/Users.json"));
 
             // Load products from data file
-            List<Product> products = JsonConvert.DeserializeObject<List<Product>>(File.ReadAllText(@"Data/Products.json"));
+<<<<<<< HEAD
+            List<Product> products = JsonConvert.DeserializeObject<List<Product>>(File.ReadAllText(@"Data\Products.json"));
             LoginManager loginManager = new LoginManager(users);
+=======
+            List<Product> products = JsonConvert.DeserializeObject<List<Product>>(File.ReadAllText(@"Data/Products.json"));
+>>>>>>> upstream/master
 
             Console.WriteLine("Welcome to TUSC");
             Console.WriteLine("---------------");
