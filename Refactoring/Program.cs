@@ -16,8 +16,26 @@ namespace Refactoring
 
             // Load products from data file
             List<Product> products = JsonConvert.DeserializeObject<List<Product>>(File.ReadAllText(@"Data\Products.json"));
+            LoginManager loginManager = new LoginManager(users);
 
-            Tusc.Start(users, products);
+            Console.WriteLine("Welcome to TUSC");
+            Console.WriteLine("---------------");
+
+            User currentUser = loginManager.PromptLogin();
+
+            if (currentUser != null)
+            {
+                Console.Clear();
+                ConsoleHelper.WriteSuccess("Login successful! Welcome " + currentUser.UserName + "!");
+
+                Tusc.Start(currentUser, products, users);
+            }
+            else
+            {
+                Console.WriteLine();
+                Console.WriteLine("Press Enter key to exit");
+                Console.ReadLine();
+            }
         }
     }
 }
